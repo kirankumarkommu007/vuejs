@@ -1,23 +1,13 @@
 <template>
-  <div>
-  <SimpleCounterComposition />
-  <br>
-<ClickCounterComposition />
-<br>
-<HoverCounterComposition />  
-</div>
+ <FetchDataComponent />
 </template>
 
 <script>
-import ClickCounterComposition from './components/ClickCounterComposition.vue';
-import HoverCounterComposition from './components/HoverCounterComposition.vue'
-import SimpleCounterComposition from './components/SimpleCounterComposition.vue';
+import FetchDataComponent from './components/FetchDataComponent.vue'
 export default {
   name: 'App',
   components: {
-    ClickCounterComposition,
-    HoverCounterComposition,
-    SimpleCounterComposition
+    FetchDataComponent
   }
 }
 </script>
