@@ -1,20 +1,19 @@
 <template>
- <RefExampleComponent />
- <ReactiveExampleComponent />
- <ToRefsExampleComponent />
+  <CounterOptionsAPI />
+  <br>
+  <CounterCompostionAPI />
 </template>
 
 <script>
-import RefExampleComponent from './components/RefExampleComponent.vue';
-import ReactiveExampleComponent from './components/ReactiveExampleComponent.vue';
-import ToRefsExampleComponent from './components/ToRefsExampleComponent.vue';
+import CounterCompostionAPI from './components/CounterCompostionAPI.vue';
+import CounterOptionsAPI from './components/CounterOptionsAPI.vue';
+
 
 export default {
   name: 'App',
   components: {
-    RefExampleComponent,
-    ReactiveExampleComponent,
-    ToRefsExampleComponent,
+    CounterCompostionAPI,
+    CounterOptionsAPI
   }
 }
 </script>
