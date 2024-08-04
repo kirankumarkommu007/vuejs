@@ -9,27 +9,40 @@
   <script>
   export default {
     name: 'CounterOptionsAPI',
+    props: {
+      initialCount: {
+        type: Number,
+        default: 0
+      }
+    },
     data() {
       return {
-        count: 0
+        count: this.initialCount
       };
+    },
+    computed: {
+      doubleCount() {
+        return this.count * 2;
+      }
     },
     methods: {
       increment() {
         this.count++;
-        console.log(this.count)
+        this.$emit('count-changed', this.count);
       }
     },
-    computed: {
-      doubleCount() {
-        
-        return this.count * 2;
-
+    watch: {
+      count(newVal) {
+        console.log('Count changed to:', newVal);
       }
     }
   };
   </script>
   
   <style>
+  button {
+    background-color: lightblue;
+    padding: 10px;
+  }
   </style>
   

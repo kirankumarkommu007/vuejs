@@ -7,21 +7,29 @@
   </template>
   
   <script>
-  import { ref, computed } from 'vue';
+  import { ref, computed, watch, defineComponent } from 'vue';
   
-  export default {
+  export default defineComponent({
     name: 'CounterCompositionAPI',
-    setup() {
-      const count = ref(0);
+    props: {
+      initialCount: {
+        type: Number,
+        default: 0
+      }
+    },
+    setup(props, { emit }) {
+      const count = ref(props.initialCount);
   
       const increment = () => {
         count.value++;
-        console.log(count)
-        console.log(count.value)
-
+        emit('count-changed', count.value);
       };
   
       const doubleCount = computed(() => count.value * 2);
+  
+      watch(count, (newVal) => {
+        console.log('Count changed to:', newVal);
+      });
   
       return {
         count,
@@ -29,9 +37,13 @@
         doubleCount
       };
     }
-  };
+  });
   </script>
   
   <style>
+  button {
+    background-color: lightcoral;
+    padding: 10px;
+  }
   </style>
   
