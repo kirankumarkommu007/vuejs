@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+  <SimpleCounter />
+  <br>
+<ClickCounter />
+<br>
+<HoverCounter />  
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ClickCounter from './components/ClickCounter.vue';
+import HoverCounter from './components/HoverCounter.vue'
+import SimpleCounter from './components/SimpleCounter.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ClickCounter,
+    HoverCounter,
+    SimpleCounter
   }
 }
 </script>
