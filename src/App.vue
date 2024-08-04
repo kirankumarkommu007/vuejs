@@ -1,23 +1,23 @@
 <template>
   <div>
-  <SimpleCounter />
+  <SimpleCounterComposition />
   <br>
-<ClickCounter />
+<ClickCounterComposition />
 <br>
-<HoverCounter />  
+<HoverCounterComposition />  
 </div>
 </template>
 
 <script>
-import ClickCounter from './components/ClickCounter.vue';
-import HoverCounter from './components/HoverCounter.vue'
-import SimpleCounter from './components/SimpleCounter.vue';
+import ClickCounterComposition from './components/ClickCounterComposition.vue';
+import HoverCounterComposition from './components/HoverCounterComposition.vue'
+import SimpleCounterComposition from './components/SimpleCounterComposition.vue';
 export default {
   name: 'App',
   components: {
-    ClickCounter,
-    HoverCounter,
-    SimpleCounter
+    ClickCounterComposition,
+    HoverCounterComposition,
+    SimpleCounterComposition
   }
 }
 </script>
