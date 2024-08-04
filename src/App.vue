@@ -1,13 +1,20 @@
 <template>
- <LifecycleHooks />
+ <RefExampleComponent />
+ <ReactiveExampleComponent />
+ <ToRefsExampleComponent />
 </template>
 
 <script>
-import LifecycleHooks from './components/LifecycleHooks.vue'
+import RefExampleComponent from './components/RefExampleComponent.vue';
+import ReactiveExampleComponent from './components/ReactiveExampleComponent.vue';
+import ToRefsExampleComponent from './components/ToRefsExampleComponent.vue';
+
 export default {
   name: 'App',
   components: {
-    LifecycleHooks
+    RefExampleComponent,
+    ReactiveExampleComponent,
+    ToRefsExampleComponent,
   }
 }
 </script>
