@@ -1,13 +1,13 @@
 <template>
- <FetchDataComponent />
+ <LifecycleHooks />
 </template>
 
 <script>
-import FetchDataComponent from './components/FetchDataComponent.vue'
+import LifecycleHooks from './components/LifecycleHooks.vue'
 export default {
   name: 'App',
   components: {
-    FetchDataComponent
+    LifecycleHooks
   }
 }
 </script>
