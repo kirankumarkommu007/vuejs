@@ -1,21 +1,25 @@
 <template>
-  <CounterOptionsAPI />
+  <CounterOptionsAPI :initialCount="5" @update:count="handleUpdate" />
   <br>
-  <CounterCompostionAPI />
+  <CounterCompostionAPI :initialCount="10" @update:count="handleUpdate" />
 </template>
 
 <script>
 import CounterCompostionAPI from './components/CounterCompostionAPI.vue';
 import CounterOptionsAPI from './components/CounterOptionsAPI.vue';
 
-
 export default {
   name: 'App',
   components: {
     CounterCompostionAPI,
     CounterOptionsAPI
+  },
+  methods: {
+    handleUpdate(newCount) {
+      console.log('Updated count:', newCount);
+    }
   }
-}
+};
 </script>
 
 <style>

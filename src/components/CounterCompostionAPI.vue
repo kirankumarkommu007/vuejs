@@ -1,37 +1,45 @@
 <template>
-    <div>
-      <p>Count: {{ count }}</p>
-      <p>Double Count: {{ doubleCount }}</p>
-      <button @click="increment">Increment</button>
-    </div>
-  </template>
-  
-  <script>
-  import { ref, computed } from 'vue';
-  
-  export default {
-    name: 'CounterCompositionAPI',
-    setup() {
-      const count = ref(0);
-  
-      const increment = () => {
-        count.value++;
-        console.log(count)
-        console.log(count.value)
+  <div>
+    <p>Count: {{ count }}</p>
+    <p>Double Count: {{ doubleCount }}</p>
+    <button @click="increment">Increment</button>
+  </div>
+</template>
 
-      };
-  
-      const doubleCount = computed(() => count.value * 2);
-  
-      return {
-        count,
-        increment,
-        doubleCount
-      };
+<script>
+import { ref, computed, watch } from 'vue';
+
+export default {
+  name: 'CounterCompositionAPI',
+  props: {
+    initialCount: {
+      type: Number,
+      default: 0
     }
-  };
-  </script>
-  
-  <style>
-  </style>
-  
+  },
+  emits: ['update:count'],
+  setup(props, { emit }) {
+    const count = ref(props.initialCount);
+
+    const increment = () => {
+      count.value++;
+      emit('update:count', count.value);
+    };
+
+    const doubleCount = computed(() => count.value * 2);
+
+    watch(count, (newValue, oldValue) => {
+      console.log(`Count changed from ${oldValue} to ${newValue}`);
+    });
+
+    return {
+      count,
+      increment,
+      doubleCount
+    };
+  }
+};
+</script>
+
+<style>
+</style>
