@@ -13,11 +13,16 @@ const app = createApp(App);
 
 app.use(PrimeVue, {
     theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+            prefix: 'p',
+            darkModeSelector: 'system',
+            cssLayer: false
+        }
     }
 });
 
-app.component('Button', Button);
+app.component('ButtonP', Button);
 app.component('InputText', InputText);
 app.component('FloatLabel', FloatLabel);
 
