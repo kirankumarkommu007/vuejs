@@ -1,24 +1,18 @@
 <template>
-  <div id="app">
-    <h1>Options API Component</h1>
-    <CounterOptionsAPI :initialCount="5" @count-changed="handleCountChange" />
-
-    <h1>Composition API Component</h1>
-    <CounterCompositionAPI :initialCount="10" @count-changed="handleCountChange" />
-  </div>
+  <SaasComp />
 </template>
 
 
 <script>
-import CounterCompositionAPI from './components/CounterCompositionAPI.vue';
-import CounterOptionsAPI from './components/CounterOptionsAPI.vue';
+import SaasComp from './components/SaasComp.vue';
+
+
 
 
 export default {
   name: 'App',
   components: {
-    CounterCompositionAPI,
-    CounterOptionsAPI
+    SaasComp
   }
 }
 </script>
