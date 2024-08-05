@@ -4,15 +4,23 @@ import UnoCSS from 'unocss/vite'
 import presetUno from '@unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), UnoCSS({
-    presets: [
-      presetUno(),
-      presetAttributify()
-    ],
-    include: ["./index.html",
-      "./src/**/*.{vue,js,ts,jsx,tsx}",
-      "./node_modules/primevue/**/*.{vue,js,ts,jsx,tsx}"]
-  })]
+  plugins: [
+    vue(),
+    UnoCSS({
+      presets: [
+        presetUno(),
+        presetAttributify()
+      ],
+      content: {
+        pipeline: {
+          include: [
+            './index.html',
+            './src/**/*.{vue,js,ts,jsx,tsx}',
+            './node_modules/primevue/**/*.{vue,js,ts,jsx,tsx}'
+          ]
+        }
+      }
+    })
+  ]
 })
